@@ -1,0 +1,1 @@
+const ingredientsWindowSwitchElement = "<div class=\"ingredientsWindowElement\"><label class=\"form-switch ingredientsWindowSwitch\"><input type=\"checkbox\" checked><i><\/i><\/label><input type=\"text\" class=\"clearField\"><\/div>";

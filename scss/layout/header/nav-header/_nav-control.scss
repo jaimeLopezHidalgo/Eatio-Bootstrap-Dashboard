@@ -36,13 +36,14 @@
     z-index: 5;
     // border-bottom: 1px solid $border;
 
-    .logo-abbr {
-        max-width: 52px;
-		@include respond('phone') {
-			max-width: 40px;
-		}
+    // .logo-abbr {
+    //     max-width: 52px;
+	// 	@include respond('phone') {
+	// 		max-width: 40px;
+	// 	}
 		
-    }
+    // }
+    // jaime edit
     .logo-compact {
         display: none;
     }
