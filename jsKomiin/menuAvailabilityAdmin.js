@@ -310,6 +310,8 @@
             icon.remove();
             iconContainer.append(availabilityIcons[0]);
         }
+        card.find("#cookingTimeField").removeClass("invalidField");
+        card.find("#cookingTimeField").val(null);
         card.find(".mealName").removeClass("invalidField");
         card.find(".mealName").val(null);
         card.find(".mealPrice").removeClass("invalidField");
@@ -341,6 +343,24 @@
         }
         $('#categoryWindowBody').find(".categoryItem").each(function () {
             if ($(this).text().includes(text)) {
+                $(this).prop("hidden", false)
+            } else {
+                $(this).prop("hidden", true)
+            }
+        });
+    }
+
+    function filterCategories(argText) {
+        let itemNameText;
+        
+        argText = argText.toLowerCase();
+        argText = argText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        $('#categoryWindowBody').find(".categoryItem").each(function () {
+            itemNameText = $(this).text().toLowerCase();
+            itemNameText = itemNameText.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            if (itemNameText.includes(argText)) {
                 $(this).prop("hidden", false)
             } else {
                 $(this).prop("hidden", true)
@@ -479,7 +499,15 @@
         $(document).on('click', '#newMealModalSaveButton', function () {
             var errorFound = false;
             var card = $('#newMealModalMenuCard');
+            let time;
             let category;
+
+            if ($('#cookingTimeField').val() == "") {
+                errorFound = true;
+                $('#cookingTimeField').addClass("invalidField");
+            }else{
+                time = card.find("#cookingTimeField").val();
+            }
 
             if (!card.data("categoryAssigned")) {
                 if ($('#hiddenUploadButton').val() == "") {
@@ -523,7 +551,7 @@
                     }
                 });
 
-                pushCard(id, url, "2", category, mealName, price, ingredients, card.find('input[type=checkbox]').prop("checked"));
+                pushCard(id, url, time, category, mealName, price, ingredients, card.find('input[type=checkbox]').prop("checked"));
                 $('#newMealModalCloseButton').click();
                 clearNewMealModal();
             }
@@ -561,9 +589,13 @@
             manageNewMealModalWidths();
         });
 
-        new ResizeSensor(jQuery('#newMealModal'), function () {
-            manageNewMealModalWidths();
+        $(document).on('click', '#newMealModal .cookingTimeContainer', function (e) {
+            e.stopPropagation();
         });
+
+        // new ResizeSensor(jQuery('#newMealModal'), function () {
+        //     manageNewMealModalWidths();
+        // });
 
         $(document).on('keydown', '#fakeIngredientField', function (pressedKey) {
             pressedKey.preventDefault();
@@ -592,7 +624,7 @@
             } else {
                 $('.searchBarClearIcon').prop("hidden", true);
             }
-            filterCategories()
+            filterCategories($(this).val());
         });
 
         $(document).on('click', '.searchBarClearIcon', function () {
@@ -621,7 +653,7 @@
             }
         });
 
-        $(document).on('keydown', '#newMealPrice', function (e) {
+        $(document).on('keydown', '.realNumeric', function (e) {
             if (e.keyCode == 69 || e.keyCode == 189) {
                 //rechzar 'e' y '-'
 

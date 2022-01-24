@@ -8,11 +8,10 @@
     <title>Komiin - dashboard para cafeterías</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="kominResources/test1.png">
-    <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet"> -->
     <!-- <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"> -->
     <link href="./css/style.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -40,9 +39,9 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="indexKomiin.html" id="logosContainer" class="brand-logo">
+            <a href="indexKomiinAdmin.html" id="logosContainer" class="brand-logo">
                 <img src="/kominResources/test1.png" alt="" id="komiinLogo1" class="logo-abbr">
-                <img src="/kominResources/test2.png" alt="" id="komiinLogo2" class="brand-title">
+                <img src="/kominResources/test2admin.png" alt="" id="komiinLogo2" class="brand-title">
             </a>
 
             <div class="nav-control">
@@ -62,25 +61,6 @@
             <div class="header-content">
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
-                        <!-- <div class="header-left">
-                            <div class="search_bar dropdown show">
-                                <div class="dropdown-menu p-0 m-0 show">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Buscar"
-                                            aria-label="Search">
-                                    </form>
-                                </div>
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M23.7871 22.7761L17.9548 16.9437C19.5193 15.145 20.4665 12.7982 20.4665 10.2333C20.4665 4.58714 15.8741 0 10.2333 0C4.58714 0 0 4.59246 0 10.2333C0 15.8741 4.59246 20.4665 10.2333 20.4665C12.7982 20.4665 15.145 19.5193 16.9437 17.9548L22.7761 23.7871C22.9144 23.9255 23.1007 24 23.2816 24C23.4625 24 23.6488 23.9308 23.7871 23.7871C24.0639 23.5104 24.0639 23.0528 23.7871 22.7761ZM1.43149 10.2333C1.43149 5.38004 5.38004 1.43681 10.2279 1.43681C15.0812 1.43681 19.0244 5.38537 19.0244 10.2333C19.0244 15.0812 15.0812 19.035 10.2279 19.035C5.38004 19.035 1.43149 15.0865 1.43149 10.2333Z"
-                                            fill="#A4A4A4" />
-                                    </svg>
-                                </span>
-                            </div>
-                        </div> -->
-
                         <ul class="navbar-nav header-right" id="headerButtonsContainer">
                             <li class="nav-item dropdown notification_dropdown">
                                 <a id="fullscreenButton" class="nav-link dz-fullscreen topButtons" href="#">
@@ -192,9 +172,9 @@
                                 <a class="nav-link topButtons" href="#" role="button" id="profileButton"
                                     data-toggle="dropdown">
                                     <div class="header-info">
-                                        <span>Hola, <strong>Peter</strong></span>
+                                        <span>Hola, <strong>Jaime</strong></span>
                                     </div>
-                                    <img src="kominResources/profile.png" width="20" alt="" />
+                                    <img src="kominResources/profileAdmin.png" width="20" alt="" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item ai-icon">
@@ -250,7 +230,7 @@
                             <span class="nav-text">Órdenes</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="indexKomiin.html">Hoy</a></li>
+                            <li><a href="indexKomiinAdmin.html">Hoy</a></li>
                             <li><a href="historyTable.html">Histórico</a></li>
                         </ul>
                     </li>
@@ -260,7 +240,26 @@
                             <span class="nav-text">Menú</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="menuAvailability.html">Disponibilidad</a></li>
+                            <li><a href="menuAvailabilityAdmin.html">Disponibilidad</a></li>
+                            <li><a href="manageCategories.html">Categorías</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-controls-3"></i>
+                            <span class="nav-text">Datos</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="statsKomiin.html">Stats</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-user-9"></i>
+                            <span class="nav-text">Emplead@s</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="manageUsers.html">Usuarios</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -278,113 +277,67 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body" id="fixedRightContainer">
-            <!-- row -->
+        <div class="content-body">
             <div class="container-fluid">
                 <div class="form-head d-flex mb-3 align-items-start">
                     <div class="mr-auto d-none d-lg-block">
-                        <h1 class="text-black font-w600 mb-0" id="orderGreeting">Buen día</h1>
-                        <p class="mb-0">Estas son las órdenes de hoy</p>
+                        <h1 class="text-black font-w600 mb-0" id="orderGreeting">Categorías</h1>
+                        <p class="mb-0">Administra las categorías de los platillos</p>
+                    </div>
+                    <button id="addCategoryButton" class="btn mb-0 komiinButton" data-toggle="modal"
+                        data-target="#newCategoryModal">
+                        agregar
+                    </button>
+                    <button id="deleteCategoryButton" class="btn mb-0 komiinButton stopPropagation">
+                        remover
+                    </button>
+                </div>
+                <div class="searchBoard">
+                    <div class="searchBoardHeader">
+                        <div class="searchBar">
+                            <i class="flaticon-381-search-2"></i>
+                            <input type="text" id="categorySearchBarInput"
+                                class="clearField searchBarInput" placeholder="buscar">
+                            <i class="flaticon-381-multiply-1 searchBarClearIcon clickable"
+                                hidden></i>
+                        </div>
+                    </div>
+                    <div class="searchBoardBody">
+                        <div class="searchBoardItem clickable">
+                            <div class="deleteItemIconContainer clickable" hidden>
+                                <i class="flaticon-381-multiply-1 deleteItemIcon"></i>
+                            </div>
+                            <span class="itemName">cat1</span>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="ordersTable" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="checkAll" required="">
-                                                        <label class="custom-control-label" for="checkAll"></label>
-                                                    </div>
-                                                </th>
-                                                <th>Etapa</th>
-                                                <th>orden</th>
-                                                <th>Monto</th>
-                                                <th>Hora</th>
-                                                <th>Límite</th>
-                                                <th>Cliente</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
+
+                <!-- modal nueva categoría -->
+                <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+                    id="newCategoryModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Nueva categoría</h3>
+                                <button type="button" class="close"
+                                    data-dismiss="modal"><span>&times;</span>
+                                </button>
+                            </div>
+                            <div id="newCategoryModalBody">
+                                <div class="menuCard slidingTDWindow">
+                                    <input type="text" id="newCategoryNameField" class="clearField" placeholder="nombre de categoría">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-rounded btn-lg komiinButton" id="nextStageButton"
-                        hidden>avanzar
-                        etapa</button>
-                </div>
-            </div>
-            <!-- order details modal -->
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="orderModal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title"></h3>
-                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead class="thead-info">
-                                        <tr>
-                                            <th scope="col">cantidad</th>
-                                            <th scope="col">platillo</th>
-                                            <th>porción</th>
-                                            <th scope="col">notas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Hamburguesa</td>
-                                            <td>--</td>
-                                            <td>término medio porfa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Galleta Chocochip</td>
-                                            <td>--</td>
-                                            <td>--</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Corona Familiar</td>
-                                            <td>grande</td>
-                                            <td>bien fría primo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Camote Fries</td>
-                                            <td>chica</td>
-                                            <td>--</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="card-footer border-0 pt-0">
-                            <div id="modalFooterStopwtachContainer" class="d-inline">
-                                <span class="badge"></span>
-                                <span id="stopwatchDescription"></span>
-                            </div>
-                            <div id="modalFooterButtonContainer" class="card-link float-right">
-                                <button type="button" class="btn btn-rounded btn-xs komiinButton"
-                                id="nextStageButton2">avanzar etapa</button>
+                            <div class="modal-footer">
+                                <button id="newCategoryModalCancelButton"
+                                    class="btn btn-rounded  btn-large komiinButton danger" data-dismiss="modal">cancelar</button>
+                                <button id="newCategoryModalSaveButton"
+                                    class="btn btn-rounded  btn-large komiinButton success">agregar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button id="swagButton">add</button>
         </div>
         <!--**********************************
             Content body end
@@ -400,17 +353,20 @@
         Scripts
     ***********************************-->
 
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/a52277ca73.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/jsKomiin/manageCategories.js"></script>
+
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <!-- <script src="./vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script> -->
-    <script src="./js/custom.min.js"></script>
-    <script src="./js/deznav-init.js"></script>
+    <script src="./vendor/global/global.min.js "></script>
+    <script src="./vendor/bootstrap-select/dist/js/bootstrap-select.min.js "></script>
+    <script src="./js/custom.min.js "></script>
+    <script src="./js/deznav-init.js "></script>
 
     <!-- Datatable -->
-    <script src="./vendor/datatables/js/jquery.dataTables.min.js"></script>
-
-    <!-- jaime js -->
-    <script src="./jsKomiin/ordersTable.js"></script>
+    <script src="./vendor/datatables/js/jquery.dataTables.min.js "></script>
+    <script src="./js/plugins-init/datatables.init.js "></script>
 
 </body>
 

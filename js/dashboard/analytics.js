@@ -11,7 +11,8 @@
 		var options = {
 			  series: [
 				{
-					name: 'Net Profit',
+					// name: 'Net Profit',
+					name: 'Time',
 					data: [50, 70, 40, 80, 30, 60, 100],
 					//radius: 12,	
 				}, 				
@@ -54,7 +55,8 @@
 			},
 			xaxis: {
 				
-			  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July'],
+			//   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July'],
+			categories: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
 			  labels: {
 				style: {
 					colors: '#3e4954',
@@ -85,7 +87,8 @@
 			tooltip: {
 			  y: {
 				formatter: function (val) {
-				  return "$ " + val + " thousands"
+				//   return "$ " + val + " thousands"
+				return val + " min"
 				}
 			  }
 			}

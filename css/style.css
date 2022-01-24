@@ -40765,6 +40765,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 
 [data-theme-version="dark"] .footer .copyright p {
   color: #fff;
+  color: palev
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -40774,6 +40775,9 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 :root {
   --magentaKomiin: #fd0476;
   --greyKomiin: #eceff1;
+  --komiinAdmin: pink;
+  --komiinCashier: palegoldenrod;
+  --komiinChef: palegreen;
   --cardBorderRadius: 10px;
   --cardBoxShadow: 0px 5px 7px -3px rgba(0, 0, 0, 0.582);
   --clearBlack: rgba(0, 0, 0, 0.808);
@@ -40838,6 +40842,15 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 
 #menuContainer {
   text-align: center;
+}
+
+.card{
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: var(--cardBorderRadius);
+  box-shadow: var(--cardBoxShadow);
 }
 
 .menuCard {
@@ -41113,12 +41126,11 @@ input::-webkit-inner-spin-button {
   padding: 1%;
 }
 
-.clearField.mealName {
+#newMealModalMenuCard .clearField{
   color: white;
-  width: 88%;
 }
 
-.clearField.mealName::placeholder {
+#newMealModalMenuCard .clearField::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -41128,6 +41140,11 @@ input::-webkit-inner-spin-button {
   box-shadow: none;
   padding: 2%;
   height: fit-content;
+  border-radius: var(--cardBorderRadius);
+}
+
+.slidingTDWindow .clearField::placeholder{
+  color: rgba(101, 101, 101, 0.5);
 }
 
 #hiddenUploadButton {
@@ -41137,14 +41154,17 @@ input::-webkit-inner-spin-button {
   z-index: -1;
 }
 
-#newMealModalIngredientsWindow .clearField {
+.hiddenUploadButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#newMealModalIngredientsWindow .clearField,  #newCategoryModal .clearField{
   width: 83%;
   font-size: 17px;
   color: gray;
-}
-
-#fakeIngredientField::placeholder {
-  color: rgba(101, 101, 101, 0.5);
 }
 
 .deleteCardIconContainer {
@@ -41195,12 +41215,16 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
 }
 
+#cookingTimeField{
+  width: 65px;
+}
+
 .mealCategory {
   float: right; 
   position: relative;
 }
 
-#newMealModal .mealCategory{
+#newMealModal .mealCategory, #newMealModal .cookingTimeContainer{
   z-index: 1;
 }
 
@@ -41229,6 +41253,10 @@ input::-webkit-inner-spin-button {
 .adminMenuCard{
   width: 235px;
   margin: 10px;
+}
+
+#newMealModalMenuCardMealName{
+  width: 88%;
 }
 
 #categoryWindow{
@@ -41287,4 +41315,228 @@ input::-webkit-inner-spin-button {
 .cookingTime{
   margin-left: 5px;
 }
+
+#newMealModal .cookingTimeContainer{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+}
+
+.modal .modal-header, .modal .modal-footer{
+  border: none;
+}
 /* termina menú */
+
+/* empieza categorías */
+.searchBoard{
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border-radius: var(--cardBorderRadius);
+  background-color: var(--greyKomiin);
+  width: 100%;
+  box-shadow: none;
+  padding: 2%;
+  height: fit-content;
+}
+
+.searchBoard .searchBoardBody{
+  margin-top: 2%;
+}
+
+.searchBoard .searchBar{
+  font-size: 20px;
+}
+
+.searchBoardItem{
+  background-color: white;
+  font-size: 28px;
+  display: inline-block;
+  border-radius: var(--cardBorderRadius);
+  box-shadow: var(--cardBoxShadow);
+  padding: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.deleteItemIconContainer {
+  width: fit-content;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  border-radius: 100px;
+  margin-left: -17px;
+  margin-top: -17px;
+  border: 1px solid grey;
+  font-size: 10px;
+}
+
+.deleteItemIconContainer:hover{
+  border: 1px solid black;
+}
+
+.deleteItemIconContainer:hover > .deleteItemIcon{
+  color: black;
+}
+
+.deleteItemIcon {
+  color: grey;
+  font-size: 15px;
+}
+
+#newCategoryModalBody{
+  padding: 2%;
+  padding-right: 3%;
+}
+/* termina categorías */
+
+/* empieza usuarios */
+#usersSearchBoard .searchBoardItem{
+  height: 140px;
+  width: 140px;
+  padding: 0;
+}
+
+.komiinAdmin{
+  outline: 2px solid var(--komiinAdmin); 
+}
+
+.komiinCashier{
+  outline: 2px solid var(--komiinCashier);
+}
+
+.komiinChef{
+  outline: 2px solid var(--komiinChef);
+}
+
+.userInfoContainer{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.userType{
+  font-weight: bold;
+  font-size: 3vh;
+  border-top-left-radius: var(--cardBorderRadius);
+  border-top-right-radius: var(--cardBorderRadius);
+  width: 100%;
+  color: white;
+}
+
+.komiinAdmin .userType{
+  background: linear-gradient(to bottom, var(--komiinAdmin) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.komiinCashier .userType{
+  background: linear-gradient(to bottom, var(--komiinCashier) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.komiinChef .userType{
+  background: linear-gradient(to bottom, var(--komiinChef) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.userPicture{
+  height: 80%;
+  width: 80%;
+  justify-self: center;
+  clip-path: circle(42%);
+  background-color: var(--magentaKomiin);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userPicture .userPictureEmptyIcon{
+  color: white;
+  font-size: 50px;
+}
+
+#usersSearchBoard .itemName{
+  font-size: 2vh;
+}
+
+.userPicture.chafa{
+  background-image: url("/kominResources/mat.jpg");
+}
+
+.userPicture.chido{
+  background-image: url("/kominResources/profileAdmin.png");
+}
+
+#newUserModal .searchBoardItem{
+  height: 250px;
+  width: 250px;
+  font-size: 40px;
+  padding: 0;
+}
+
+#newUserModal .userType{
+  font-size: 1.2vw;
+  height: 60px;
+  text-align: center;
+  background: none;
+  color: var(--greyKomiin);
+}
+
+#newUserModal .clearField::placeholder{
+  color: rgba(101, 101, 101, 0.5);
+}
+
+#newUserModal .itemName{
+  text-align: center;
+}
+
+#newUserModalBody{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.extraFieldContainer{
+  width: 80%;
+}
+
+.extraFieldContainer .slidingTDWindow{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.extraFieldContainer input{
+  width: 100%;
+}
+
+.extraFieldContainer #newUserPasswordField{
+  width: 92%;
+}
+
+.extraFieldContainer .changeFieldVisibilityIcon{
+  color: black;
+}
+
+.invalidFieldMessage{
+  color: var(--danger);
+  text-align: left;
+  font-size: 12px;
+}
+
+/* termina usuarios */

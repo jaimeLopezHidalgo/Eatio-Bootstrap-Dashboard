@@ -12,13 +12,6 @@
     <!-- <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"> -->
     <link href="./css/style.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-
-    <!-- JS -->
-    <script src="https://kit.fontawesome.com/a52277ca73.js" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/jsKomiin/menuAvailabilityAdmin.js"></script>
-    <script src="css-element-queries-1.2.1/src/ResizeSensor.js"></script>
-    <script src="css-element-queries-1.2.1/src/ElementQueries.js"></script>
 </head>
 
 <body>
@@ -248,6 +241,25 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="menuAvailabilityAdmin.html">Disponibilidad</a></li>
+                            <li><a href="manageCategories.html">Categorías</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-controls-3"></i>
+                            <span class="nav-text">Datos</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="statsKomiin.html">Stats</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-381-user-9"></i>
+                            <span class="nav-text">Emplead@s</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="manageUsers.html">Usuarios</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -352,7 +364,9 @@
                                                                 <span>
                                                                     <i class="flaticon-381-clock"></i>
                                                                 </span>
-                                                                <span class="cookingTime">15</span>
+                                                                <input type="number" id="cookingTimeField"
+                                                                        class="clearField realNumeric"
+                                                                        placeholder="tiempo" min="1" max="120">
                                                                 <span> min</span>
                                                             </div>
                                                             <div id="mealCategoryContainer">
@@ -372,7 +386,7 @@
                                                                     placeholder="nombre del platillo">
                                                                 <div class="priceContainer">
                                                                     <input type="number" id="newMealPrice"
-                                                                        class="mealPrice mealName clearField"
+                                                                        class="mealPrice clearField realNumeric"
                                                                         placeholder="precio" min="20" max="1000">
                                                                     <span>MXN</span>
                                                                 </div>
@@ -449,6 +463,13 @@
     <!--**********************************
         Scripts
     ***********************************-->
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/a52277ca73.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/jsKomiin/menuAvailabilityAdmin.js"></script>
+    <script src="css-element-queries-1.2.1/src/ResizeSensor.js"></script>
+    <!-- <script src="css-element-queries-1.2.1/src/ElementQueries.js"></script> -->
 
     <!-- Required vendors -->
     <script src="./vendor/global/global.min.js "></script>
